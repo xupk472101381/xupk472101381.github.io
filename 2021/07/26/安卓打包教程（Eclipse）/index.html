@@ -9,30 +9,30 @@
   <meta name="description" content="1.在Eclipse中完成SDK的对接，下面是截图QuickSDK的示例工程    2.导出jar包  3.配置Unity   注意： 1._common和_keystore不需要修改，但是生成新的证书，要及时提交 2._sdkconfig中的txt，需要打开编辑，修改中间的第2，3，4，其他不需要修改 4.配置打包参数      注意如何打最新包和获取最新热更版本号   将项目更新到最新">
 <meta property="og:type" content="article">
 <meta property="og:title" content="安卓打包教程（Eclipse）">
-<meta property="og:url" content="https://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/index.html">
+<meta property="og:url" content="http://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1.在Eclipse中完成SDK的对接，下面是截图QuickSDK的示例工程    2.导出jar包  3.配置Unity   注意： 1._common和_keystore不需要修改，但是生成新的证书，要及时提交 2._sdkconfig中的txt，需要打开编辑，修改中间的第2，3，4，其他不需要修改 4.配置打包参数      注意如何打最新包和获取最新热更版本号   将项目更新到最新">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/a789d5109eb5c466ef482242a359ffd2.png">
-<meta property="og:image" content="https://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/953116d4bc410629d0049ad87cdc906d.png">
-<meta property="og:image" content="https://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/b97bbd210364178d6a7a3d219e077f74.png">
-<meta property="og:image" content="https://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/e2c7c72fc0a58ef82296224a8feeb72b.png">
-<meta property="og:image" content="https://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/1c5e0cb809b3569372d5d2eb2ea87586.png">
-<meta property="og:image" content="https://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/27adf8aba494a47b5a917dd331a70db2.png">
-<meta property="og:image" content="https://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/0fa4bd29328e9607e6052d4b73be56b6.png">
-<meta property="og:image" content="https://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/952d7a68065f1f0b5411bb2304a93042.png">
-<meta property="og:image" content="https://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/1d3d72212cb6954fe036f73ba542e7ce.png">
-<meta property="og:image" content="https://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/db18cfe4ac289cd6ffaa096be53e85d4.png">
-<meta property="og:image" content="https://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/054eca52ed7bb6bd8da9c93002c7777d.png">
-<meta property="og:image" content="https://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/dfc78dd34252cfb86750588d26c6b989.png">
-<meta property="og:image" content="https://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/29335e6bbff5a676cf0e94f82fa3ced7.png">
-<meta property="og:image" content="https://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/b53ae538febe8cc61a8412074e53a814.png">
-<meta property="og:image" content="https://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/9cac47a8cc5229d7121c655e4669e69a.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/a789d5109eb5c466ef482242a359ffd2.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/953116d4bc410629d0049ad87cdc906d.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/b97bbd210364178d6a7a3d219e077f74.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/e2c7c72fc0a58ef82296224a8feeb72b.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/1c5e0cb809b3569372d5d2eb2ea87586.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/27adf8aba494a47b5a917dd331a70db2.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/0fa4bd29328e9607e6052d4b73be56b6.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/952d7a68065f1f0b5411bb2304a93042.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/1d3d72212cb6954fe036f73ba542e7ce.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/db18cfe4ac289cd6ffaa096be53e85d4.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/054eca52ed7bb6bd8da9c93002c7777d.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/dfc78dd34252cfb86750588d26c6b989.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/29335e6bbff5a676cf0e94f82fa3ced7.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/b53ae538febe8cc61a8412074e53a814.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/9cac47a8cc5229d7121c655e4669e69a.png">
 <meta property="article:published_time" content="2021-07-26T12:19:31.797Z">
 <meta property="article:modified_time" content="2021-07-26T12:43:36.809Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/a789d5109eb5c466ef482242a359ffd2.png">
+<meta name="twitter:image" content="http://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/a789d5109eb5c466ef482242a359ffd2.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -82,7 +82,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xupk472101381.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://xupk472101381.github.io"></form>
       </div>
     </div>
   </div>
@@ -148,7 +148,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/" data-id="ckrkminsv0001nwcw27r6ad6w" data-title="安卓打包教程（Eclipse）" class="article-share-link">Share</a>
+      <a data-url="http://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/" data-id="ckrkms97l0001focwb9c9bz0f" data-title="安卓打包教程（Eclipse）" class="article-share-link">Share</a>
       
       
       
