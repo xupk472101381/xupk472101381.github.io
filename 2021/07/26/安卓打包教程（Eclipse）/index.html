@@ -6,13 +6,33 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
+  <meta name="description" content="1.在Eclipse中完成SDK的对接，下面是截图QuickSDK的示例工程    2.导出jar包  3.配置Unity   注意： 1._common和_keystore不需要修改，但是生成新的证书，要及时提交 2._sdkconfig中的txt，需要打开编辑，修改中间的第2，3，4，其他不需要修改 4.配置打包参数      注意如何打最新包和获取最新热更版本号   将项目更新到最新">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="http://example.com/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.在Eclipse中完成SDK的对接，下面是截图QuickSDK的示例工程    2.导出jar包  3.配置Unity   注意： 1._common和_keystore不需要修改，但是生成新的证书，要及时提交 2._sdkconfig中的txt，需要打开编辑，修改中间的第2，3，4，其他不需要修改 4.配置打包参数      注意如何打最新包和获取最新热更版本号   将项目更新到最新">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/media/a789d5109eb5c466ef482242a359ffd2.png">
+<meta property="og:image" content="http://example.com/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/media/953116d4bc410629d0049ad87cdc906d.png">
+<meta property="og:image" content="http://example.com/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/media/b97bbd210364178d6a7a3d219e077f74.png">
+<meta property="og:image" content="http://example.com/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/media/e2c7c72fc0a58ef82296224a8feeb72b.png">
+<meta property="og:image" content="http://example.com/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/media/1c5e0cb809b3569372d5d2eb2ea87586.png">
+<meta property="og:image" content="http://example.com/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/media/27adf8aba494a47b5a917dd331a70db2.png">
+<meta property="og:image" content="http://example.com/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/media/0fa4bd29328e9607e6052d4b73be56b6.png">
+<meta property="og:image" content="http://example.com/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/media/952d7a68065f1f0b5411bb2304a93042.png">
+<meta property="og:image" content="http://example.com/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/media/1d3d72212cb6954fe036f73ba542e7ce.png">
+<meta property="og:image" content="http://example.com/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/media/db18cfe4ac289cd6ffaa096be53e85d4.png">
+<meta property="og:image" content="http://example.com/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/media/054eca52ed7bb6bd8da9c93002c7777d.png">
+<meta property="og:image" content="http://example.com/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/media/dfc78dd34252cfb86750588d26c6b989.png">
+<meta property="og:image" content="http://example.com/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/media/29335e6bbff5a676cf0e94f82fa3ced7.png">
+<meta property="og:image" content="http://example.com/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/media/b53ae538febe8cc61a8412074e53a814.png">
+<meta property="og:image" content="http://example.com/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/media/9cac47a8cc5229d7121c655e4669e69a.png">
+<meta property="article:published_time" content="2021-07-26T12:19:31.797Z">
+<meta property="article:modified_time" content="2021-07-26T12:19:16.640Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/media/a789d5109eb5c466ef482242a359ffd2.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -69,9 +89,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-安卓打包教程（Eclipse）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-安卓打包教程（Eclipse）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/" class="article-date">
   <time class="dt-published" datetime="2021-07-26T12:19:31.797Z" itemprop="datePublished">2021-07-26</time>
@@ -127,62 +145,19 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/07/26/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-07-26T11:37:10.522Z" itemprop="datePublished">2021-07-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/07/26/hello-world/">Hello World</a>
-    </h1>
+    <a href="/2021/07/26/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/26/hello-world/" data-id="ckrklm5n00000hccw3tai6xm7" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
 
 
 </section>
