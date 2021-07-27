@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>IOS接入详细流程 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Unity导出Xcode时需要注意： 当需要导出Xcode工程时    小版本号：当游戏热更量较大或者渠道要求无热更的时候需要改动。通常新的版本号问下凯哥（有后台账号去后台查看）方法如下：     热更开关：默认打开（无特殊情况）   包类型：IOS_P越狱，IOS_L正版包，一般情况只用到这两种。   平台：固定IOS平台   外网测试包：勾选即为打白包。正式包不勾选。  当GameDataSe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IOS接入详细流程">
+<meta property="og:url" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Unity导出Xcode时需要注意： 当需要导出Xcode工程时    小版本号：当游戏热更量较大或者渠道要求无热更的时候需要改动。通常新的版本号问下凯哥（有后台账号去后台查看）方法如下：     热更开关：默认打开（无特殊情况）   包类型：IOS_P越狱，IOS_L正版包，一般情况只用到这两种。   平台：固定IOS平台   外网测试包：勾选即为打白包。正式包不勾选。  当GameDataSe">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/b9eea97e0390d9493263010002825e91.jpeg">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/a10155c4010b8d11ca8ed417d473d366.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/61e7a35ae95cc32963d07918f4ad6eed.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/578f940b2724fee6acb8beb1a2297221.jpeg">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/c92fe03f5686f3e495f5c842ea271bd6.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/a50527247b3eedb04cc2a4ed9e280429.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/8fe0332dddde4f7744f5205d0ea9db76.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/a5c8a90479f2db58636ae3808f1b5dbe.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/f7977b67777e583ccebfe955bd1e4e12.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/efc5575be8686df97fcecda75a9cbf87.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/f97ae34de260354b5702be48d7748015.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/657d61d119a25934c4866969cf4e9de7.jpeg">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/b5daaa729a0c49769e2559ac443d6a91.jpeg">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/fc90367c9d12f0b84a75de18890fa4c4.jpeg">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/198025604859b3ca9cf3be59e2e3e599.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/2df25abba3765921fde66f8d617c58bd.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/c16d40f819a95af5c7da5d1e85b39bf3.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/768f107c02f4809427cfef3e96b5740e.jpeg">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/6e0b01e2a87178bd9e38c41fd0fde033.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/ee5ea8757aaccd76aaae3e14ce99d311.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/9dd4dbfe2a570a92a762ac1b7fc71265.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/4674f105e0decc176e2cd6044eda7d90.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/e57fd18ff254ebd2e369b32ac2aa0a16.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/7c7b26062b7591dade1e89a6f4bad549.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/6fe7cb73ba3ce2539dc654de3ec63833.jpeg">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/07df5094feeac589752ae0bfb5bf1df5.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/ae637c00f3987a143e1df7b598a687da.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/d81b9a33aed727e3e426a8c45bd73d43.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/3f1ff711fa645e8616c8a53e9da12eee.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/54f5f0c92f6b8db71a6cf1efe84c3719.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/b11094366bb48b0d1fa4786b33f5601e.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/70b16588f0087fdac86b546d12695903.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/e82723fea10ce91f68ce2e7a6903bee8.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/d1194cab4076fd4acb4bcbcbabfe8c2e.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/8b52edad1c66a33910c50a82ba3710d1.png">
+<meta property="article:published_time" content="2021-07-27T09:48:12.137Z">
+<meta property="article:modified_time" content="2021-07-27T10:32:10.682Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/b9eea97e0390d9493263010002825e91.jpeg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://xupk472101381.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-unity/出包文档/IOS接入详细流程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/" class="article-date">
+  <time class="dt-published" datetime="2021-07-27T09:48:12.137Z" itemprop="datePublished">2021-07-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Unity/">Unity</a>►<a class="article-category-link" href="/categories/Unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/">出包文档</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      IOS接入详细流程
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>Unity导出Xcode时需要注意：</strong></p>
+<p>当需要导出Xcode工程时</p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/b9eea97e0390d9493263010002825e91.jpeg" alt="IMG_256"></p>
+<ol>
+<li> 小版本号：当游戏热更量较大或者渠道要求无热更的时候需要改动。通常新的版本号问下凯哥（有后台账号去后台查看）方法如下：</li>
+</ol>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/a10155c4010b8d11ca8ed417d473d366.png"></p>
+<ol>
+<li><p> 热更开关：默认打开（无特殊情况）</p>
+</li>
+<li><p> 包类型：IOS_P越狱，IOS_L正版包，一般情况只用到这两种。</p>
+</li>
+<li><p> 平台：固定IOS平台</p>
+</li>
+<li><p> 外网测试包：勾选即为打白包。正式包不勾选。</p>
+</li>
+<li><p>当GameDataSetting文件修改完时，执行Export<br> All（一般是改动什么文件Export什么文件），<strong>正版包</strong>还需要执行<strong>Export<br> GarbageCode</strong>和<strong>Export GarbageAsset</strong>如图所示：</p>
+<p> <img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/61e7a35ae95cc32963d07918f4ad6eed.png" alt="IMG_256"><br> 执行完成后我们就导出Xcode工程到本地</p>
+<p> <img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/578f940b2724fee6acb8beb1a2297221.jpeg" alt="IMG_256"></p>
+</li>
+</ol>
+<p><strong>越狱包：</strong></p>
+<p>越狱包可以用同一个Xcode工程，所以我们可以导出一个Xcode工程共用。出不同的渠道包拷一个去接入即可。</p>
+<p><strong>正版包：</strong></p>
+<p>正版包不可以共用Xcode工程，所以每次出正版包我们需要导出一次Xcode工程，切记<strong>正版包</strong>还需要执行<strong>Export<br>GarbageCode</strong>和<strong>Export GarbageAsset</strong><br>然后才能导出Xcode工程，每一个包单独用一个Xcode工程。</p>
+<p><strong>接入SDK的详细步骤</strong></p>
+<p><strong>一、前期准备</strong></p>
+<p><strong>以下说的3点文件在桌面有备份，可以直接拷贝使用</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/c92fe03f5686f3e495f5c842ea271bd6.png" alt="IMG_256">**<br>1.在Data/Raw新建texture文件，用来存放游戏的素材，素材由渠道提供，运营会发给你。具体如下（注意命名规范）：</p>
+<p>loading logo_denglu logo_icon logo_welcome**</p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/a50527247b3eedb04cc2a4ed9e280429.png" alt="IMG_256"><br><strong>2.IOS文件，注意目录层级（Classes和Resources）Classes是工程的SDK接入的主要代码，Resources文件可以放SDK库文件，也可以放工程的根目录。具体路径如下图IOS/Resources/cl43Lczz/lib，SDK文件也可以放在工程根目录，指定到Unity-iPhone<br>target就可以（不明白的地方可以参考之前的工程）。</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/8fe0332dddde4f7744f5205d0ea9db76.png" alt="IMG_256"></p>
+<ol>
+<li> <strong>替换Unity-IPhone文件，appiconset是icon，icon运营会给，照着命名然后替换即可，launchimage是闪屏文件，渠道没有要求用默认的即可。</strong></li>
+</ol>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/a5c8a90479f2db58636ae3808f1b5dbe.png" alt="IMG_256"></p>
+<ol>
+<li> <strong>Xcode工程配置</strong></li>
+</ol>
+<p><strong>1）打开Unity-IPhone.xproject文件，在Unity-iPhone 这个target修改配置如图。<br>Unity-iPhone =&gt; General</strong></p>
+<p><strong>1.依次是Display Name:游戏名字，Bundle<br>Identifier:游戏bundleID（这个渠道没有提供则自拟，比如com.cqgh.cq，中间cqgh为项目名称字母缩写，cq游戏名字母缩写），Version:游戏版本号（一般1.0.1，提版本号就改为1.0.2），build：参考Version改，1.0.1为1，1.0.2为2）。</strong></p>
+<p><strong>2.证书，越狱包直接用我们的证书（PTAllPackage）,正版包用渠道发来的证书。证书过期找运营重新导。</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/f7977b67777e583ccebfe955bd1e4e12.png"></p>
+<p><strong>3.设备安装游戏需要的最低版本号。一般填小点。9、10即可</strong></p>
+<blockquote>
+<p>  <strong>4.打开游戏转向，这里不需要改动，默认。</strong></p>
+</blockquote>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/efc5575be8686df97fcecda75a9cbf87.png" alt="IMG_256"></p>
+<ol>
+<li><p> <strong>接下来配置icon、闪屏和库文件如图</strong></p>
+</li>
+<li><p> <strong>这里选择我们之前配好的icon和闪屏文件，指定到文件夹即可。</strong></p>
+</li>
+<li><p> <strong>需要手动添加SafariServices.framework、ImageIO.framework、Security.framework、libc++.tbd、libz.tbd这几个库文件，对接SDK的时候看SDK文档有要求就继续加SDK要求的库文件。</strong></p>
+</li>
+</ol>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/f97ae34de260354b5702be48d7748015.png" alt="IMG_256"></p>
+<ol>
+<li><strong>把IOS文件导进工程，并指定到Unity-iPhone这个Target下。有两种方法如图。1是Add<br> ,2是直接拖到Unity-iPhone下。</strong></li>
+</ol>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/657d61d119a25934c4866969cf4e9de7.jpeg" alt="IMG_256"><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/b5daaa729a0c49769e2559ac443d6a91.jpeg" alt="IMG_256"></p>
+<p><strong>加进来之后，按照如图勾选就可以。</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/fc90367c9d12f0b84a75de18890fa4c4.jpeg" alt="IMG_256"></p>
+<p><strong>在unity-iPhone ==&gt; Build Setting ==&gt;Other Linker Flags<br>加入-ObjC，指定Info.plist文件（在之前说的Resources文件下，或者用根目录的）。同时根据SDK文档配置Info.plist文件（苹果的相机，相册，麦克风权限，和SDK第三方的支付需要在此配置，需要注意。不明白的可以参考之前结果的工程）</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/198025604859b3ca9cf3be59e2e3e599.png" alt="IMG_256"></p>
+<p><strong>同时需要配置sdkInfo，market为包号，channel为渠道标识。</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/2df25abba3765921fde66f8d617c58bd.png" alt="IMG_256"></p>
+<p><strong>关闭Bitcode，unity-iPhone ==&gt; Build Setting ==&gt;Enable Bitcode改No</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/c16d40f819a95af5c7da5d1e85b39bf3.png" alt="IMG_256"></p>
+<p>**配置完基础的Xcode的配置后，此时打开SDK客户端接入文档，根据文档完善SDK需要的Xcode配置。</p>
+<p>4）接下里修改各项目的登陆请求地址，每个项目的地址都不一样，具体问PHP要。IOS/Classes/Common/CommonAppDelegate.mm**</p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/768f107c02f4809427cfef3e96b5740e.jpeg" alt="IMG_256"></p>
+<p><strong>三、然后开始接入SDK逻辑，我们需要参考SDK接入文档和SDK<br>Demo同步接入。具体逻辑写在IOS/Classes/NoSDK/AppDelegate.mm文件中，NoSDK是可以改名的（可以改成渠道或者SDK名字）。</strong></p>
+<p><strong>具体需要接入以下几个接口：</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/6e0b01e2a87178bd9e38c41fd0fde033.png" alt="IMG_256"></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/ee5ea8757aaccd76aaae3e14ce99d311.png" alt="IMG_256"></p>
+<ol>
+<li><p> <strong>return 0; 其中0是渠道标识，运营提供</strong></p>
+</li>
+<li><p> <strong>Init(); 固定这么写</strong></p>
+</li>
+<li><p><strong>Login();<br> 游戏的登录逻辑，在这里调用SDK的登录逻辑，将SDK返回的登录成功的数据和PHP通信。（一般写在登录成功回调里，SDK没有登录成功的回调则写在登录方法Login();里），其中</strong>@”package”<br> @”user_id” @”token”<br> @”protocol”<strong>是发给PHP去登录验证的，参数名由PHP定义，不明白的地方可以参考之前的工程。</strong></p>
+<p> <img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/9dd4dbfe2a570a92a762ac1b7fc71265.png" alt="IMG_256"></p>
+</li>
+<li><p><strong>LoginOut();<br> 游戏的登出/注销/切换账号逻辑，在这里调用SDK的登出/注销/切换账号逻辑。如果该SDK没有登出逻辑，则调用</strong>U3DSendMessage(ON_LOGOUT,<br> @””); <strong>通知游戏登出即可。某些SDK有登出回调，就把</strong>U3DSendMessage(ON_LOGOUT,<br> @””); <strong>写在SDK的登录回调中。</strong></p>
+</li>
+<li><p> <strong>ShowCenter(); 预留接口。不用写逻辑。</strong></p>
+</li>
+<li><p><strong>Pay();<br> 支付接口，SDK的支付方法写在这里，然后传相应的参数就行。有些项目有订单类型参数，就在后面定义多一个orderType</strong></p>
+<p> <strong>支付参数释义 ：</strong></p>
+<p> <strong>money购买商品价格 productId产品ID oderType订单类型</strong></p>
+</li>
+</ol>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/4674f105e0decc176e2cd6044eda7d90.png" alt="IMG_256"></p>
+<ol>
+<li><p> <strong>Application(): SDK的初始化可以写在这里</strong></p>
+</li>
+<li><p><strong>UpdatePlayInfo();<br> 更新角色信息接口，创建角色接口。SDK的更新角色接口和创建角色接口写在这里，下图为创建角色时调用。</strong></p>
+<p> <img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/e57fd18ff254ebd2e369b32ac2aa0a16.png" alt="IMG_256"></p>
+</li>
+<li><p><strong>UpdateLevel(); 更新角色等级时调用该接口。</strong></p>
+<p> <strong>游戏内的一些参数如图，这些参数会在登录，支付，上报信息等接口使用，具体调用方法示例：<br> [instance mRoleID];</strong></p>
+<p> <strong>从上往下依次释义</strong></p>
+<p> <strong>mRoleID角色ID mNikeName角色名称 mRoleLvl角色等级</strong></p>
+<p> <strong>mServerID服务器ID mServerName服务器名称 mGold货币余额</strong></p>
+<p> <strong>mVipLvl vip等级 mFactionName公会名称 mCreateRoleTime创角时间</strong></p>
+<p> <strong>mState当前状态 mYapType 支付方式 mDomain 域名（基本不用）</strong></p>
+<p> <img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/7c7b26062b7591dade1e89a6f4bad549.png" alt="IMG_256"></p>
+</li>
+</ol>
+<p><strong>5）逻辑接入完成开始调试，联合PHP调通登录和支付即可。跑一下游戏没问题之后准备打包，直接执行Product==&gt;Archive</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/6fe7cb73ba3ce2539dc654de3ec63833.jpeg" alt="IMG_256"></p>
+<p><strong>四、打包，Archive完成后执行Distribute App</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/07df5094feeac589752ae0bfb5bf1df5.png" alt="IMG_256"></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/ae637c00f3987a143e1df7b598a687da.png" alt="IMG_256"></p>
+<p><strong>越狱包选择Development 然后Next</strong></p>
+<p><strong>正版包选择iOS App Store 然后Next，选择Export其余步骤相同</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/d81b9a33aed727e3e426a8c45bd73d43.png" alt="IMG_256"></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/3f1ff711fa645e8616c8a53e9da12eee.png" alt="IMG_256"></p>
+<p><strong>这里直接Next即可</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/54f5f0c92f6b8db71a6cf1efe84c3719.png"></p>
+<p><strong>这里选择相应的打包证书即可</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/b11094366bb48b0d1fa4786b33f5601e.png" alt="IMG_256"></p>
+<p>**最后Export到本地<br>**可以参考<a target="_blank" rel="noopener" href="http://blog.csdn.net/n5/article/details/50083161">http://blog.csdn.net/n5/article/details/50083161</a></p>
+<p><strong>关于新版本unity（2019.3以上版本）导出的xcode工程</strong></p>
+<p><strong>Unity2019.3以上版本导出的工程略有不同。我们需要将SafariServices.framework、ImageIO.framework、Security.framework、libc++.tbd、libz.tbd和SDK的库文件加到UnityFramework这个Target中，</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/70b16588f0087fdac86b546d12695903.png" alt="IMG_256"></p>
+<p><strong>Info.plist需要配置在主Target<br>Unity-iPhone，同时info.plis文件尽量用unity导出的自带的，需要补齐里面的配置，相机相册麦克风等权限，和包号，渠道标识的配置。</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/e82723fea10ce91f68ce2e7a6903bee8.png" alt="IMG_256"></p>
+<p><strong>闪屏命名成框选的命名</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/d1194cab4076fd4acb4bcbcbabfe8c2e.png" alt="IMG_256"></p>
+<p><strong>在unityFramework==&gt;Build Phases CommonReachability.mm和CommonAppDelegate.mm<br>加上 -fno-objc-arc 属性，如下</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/8b52edad1c66a33910c50a82ba3710d1.png" alt="IMG_256"></p>
+<p><strong>另外打包的时候直接Archive参考</strong></p>
+<p><strong><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sunfuyou/p/6545442.html">https://www.cnblogs.com/sunfuyou/p/6545442.html</a></strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/" data-id="ckrm02zqi00016ocw5l5kdtnp" data-title="IOS接入详细流程" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%A0%81%E8%AE%B2%E8%A7%A3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          客户端代码讲解
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">安卓打包教程（AS）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/">Unity</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/">出包文档</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/">开发文档</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/%E7%83%AD%E6%9B%B4%E6%96%B0/">热更新</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/">美术规范</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Work/">Work</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/">特效制作规范</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%8A%A8%E4%BD%9C%E8%A7%84%E8%8C%83/">角色动作规范</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/">角色制作规范</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%89%B9%E6%95%88%E5%AF%BC%E5%85%A5%E6%B5%81%E7%A8%8B/">客户端特效导入流程</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/27/unity/%E7%83%AD%E6%9B%B4%E6%96%B0/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%83%AD%E6%9B%B4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/">客户端热更流程说明</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

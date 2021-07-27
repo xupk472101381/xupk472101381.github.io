@@ -71,12 +71,16 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-安卓打包教程（AS）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-unity/美术规范/特效制作规范" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/07/27/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/" class="article-date">
-  <time class="dt-published" datetime="2021-07-27T02:38:17.512Z" itemprop="datePublished">2021-07-27</time>
+    <a href="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/" class="article-date">
+  <time class="dt-published" datetime="2021-07-27T11:47:07.767Z" itemprop="datePublished">2021-07-27</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Unity/">Unity</a>►<a class="article-category-link" href="/categories/Unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/">美术规范</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -85,7 +89,831 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/07/27/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/">安卓打包教程（AS）</a>
+      <a class="p-name article-title" href="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/">特效制作规范</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>U3D新项目特效制作规范</strong></p>
+<p><strong>版本规范</strong></p>
+<p>现在项目版本Unity 5.6.5f1 <img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/67668757bf5bfc6d4263770a982f8c6f.png"></p>
+<p>**贴图规范 (**不透明用jpg，透明用PNG 或 TGA 图片文件)</p>
+<p>图片大小控制为 32x32,64x64,128x128,256x256,512x512等2的幂次方，尺寸越小越好。</p>
+<p>所有发射的粒子使用贴图都使用以下类型</p>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/9f9c6fb73b6bde1e03f4f455b3c7e370.png"></p>
+<p><strong>命名规范</strong>（用英文标注。）</p>
+<ol>
+<li><p><strong>Unity特效目录</strong></p>
+<p> 注意：目录结构要跟下面的截图一致，否则验收不通过</p>
+</li>
+</ol>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/86aa10afdf5f3ce97b929ad7b8afba6a.png"></p>
+<p>特效使用到的模型网格文件一律存放在</p>
+<p>Assets\ AssetProject\Editor\SourceAsset\effect\efxmesh</p>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/e97e8a4aabcd8e9f73d37d686cbb392f.png"></p>
+<p>特效创建的动作文件保存位置Assets\<br>AssetProject\Editor\SourceAsset\effect\animation</p>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/4320d62a67769c49c697827e7e37426f.png"></p>
+<p>贴图文件保存位置Assets\ AssetProject\Editor\SourceAsset\effect\texture</p>
+<p>注意：特效贴图名称必须以te_开头</p>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/81117ec16ebd938a23bbd033fa87e1d6.png"></p>
+<p>其中贴图类型可以根据功能再设子文件夹分类：如粒子，刀光，序列(sequence)等等</p>
+<blockquote>
+<p>  <img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/b9a8f91a1a6d48e27db75677c314f216.png"></p>
+</blockquote>
+<p>材质球文件保存位置Assets\AssetProject\Editor\SourceAsset\effect\material</p>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/63d9f90e1e6b003c5966d2e61af55220.png"></p>
+<p>特效预设文件保存位置Assets\AssetProject\Editor\PrefabBundles\efx</p>
+<p>注意：所有的特效预设都必须以efx_开头，必须挂载FxControllerData脚本</p>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/612a9cdc069dd8f788432bb450d73323.png"></p>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/94ab841ae6ffe0f1603710fd2d1be01c.png"></p>
+<p>其中预设文件夹需安装特效类型分类，如宠物，道具，技能和翅膀等（分类可以使用英文或者拼音）。</p>
+<blockquote>
+<p>  <img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/56b94ebbf5171cefacba67e460a8f671.png"></p>
+</blockquote>
+<p>所有使用的shader都必须存放的位置Assets\Code\SystemCode\thirdparty\shader</p>
+<blockquote>
+<p>  <img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/9e990052df9fdf70c02fa093854d8d5b.png"></p>
+</blockquote>
+<ol>
+<li> <strong>特效贴图命名没有特殊要求（可安个人偏好）,但是要在贴图命名前加前缀为“te_”：</strong></li>
+</ol>
+<p>贴图必须存放在texture文件夹，文件夹里按子文件夹分类。</p>
+<p><strong>特效Shader规范</strong></p>
+<p>无特殊要求，尽量使用Mobile（如果有开发）-&gt;Particles-&gt;…下面的几个Shader</p>
+<p><strong><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/8383b394f8b13a3b32caf969819be5f2.png"></strong></p>
+<p><strong><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/c89e636c147c256e620d5be4cc4c31b1.png"></strong></p>
+<p><strong>粒子系统规范</strong></p>
+<p><strong>1.坐标清零</strong></p>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/20f24363497289f2a1bfc647cb450495.png"></p>
+<p>粒子系统Renderer下投射、接受阴影选项必须去掉</p>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/0fb4e64b2d1ddbbd83e53e18f10f84a6.png"></p>
+<p>CastShadows，ReceiveShadows投射、接受阴影选项必须关掉，开销特别大</p>
+<p>MaxParticleSize一般为1，正常比例</p>
+<p><strong>2：粒子数量规范</strong></p>
+<p>粒子Max Particles 默认1000，改为30</p>
+<blockquote>
+<p>  <img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/bec7e71a737c2a5551ae1916f302efc9.png"></p>
+</blockquote>
+<p>全部MaxParticles加起来少于30，1000要改为30</p>
+<p><strong>模型规范</strong></p>
+<ol>
+<li> 特效用模型要精简，无特殊要求，面数不要用的太多。</li>
+</ol>
+<p>2导出FBX的时候，一定要检查模型法线有么有统一，有没有反的面。在Options里面把动画（看需求）、摄像机、灯光选项去掉，这些都会极大的增大资源。</p>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/f093ae5742236456a69dc39cb3f8b976.png"></p>
+<p>特效使用的fbx模型不使用动画的特效 Animator 要Remove去掉</p>
+<p>不渲染模型的特效 Mesh Renderer要Remove去掉，CastShadows必须去掉</p>
+<p>ReceiveShadows必须去掉Box collider（如无需求）必须remove掉</p>
+<p><strong>注意：</strong></p>
+<p><strong>1：尽量少用粒子系统，每个效果粒子系统尽量控制10个左右。每帧实时总粒子数量不超过60个，发射的数量尽量少。</strong></p>
+<p><strong>2：特效制作父级别prefab及套的prefab都要坐标归零。</strong></p>
+<p><strong>3：工程目录文件和特效贴图不能用中文，可用英文、字母和数字表示。</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://xupk472101381.github.io/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/" data-id="ckrm02zqt000j6ocw8bvu99j6" data-title="特效制作规范" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-unity/美术规范/角色动作规范" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%8A%A8%E4%BD%9C%E8%A7%84%E8%8C%83/" class="article-date">
+  <time class="dt-published" datetime="2021-07-27T11:43:45.449Z" itemprop="datePublished">2021-07-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Unity/">Unity</a>►<a class="article-category-link" href="/categories/Unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/">美术规范</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%8A%A8%E4%BD%9C%E8%A7%84%E8%8C%83/">角色动作规范</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>&gt;&gt; 角色类型</strong></p>
+<p>男角色： 1</p>
+<p>女角色： 2</p>
+<p><strong>&gt;&gt; avatar资源命名规则</strong></p>
+<p>npc： ava_n_name</p>
+<p>monster： ava_m_name</p>
+<p>player： ava_p_角色类型id</p>
+<p><strong>&gt; 职业类型</strong></p>
+<p>战士： 1</p>
+<p>道士： 2</p>
+<p>法师： 3</p>
+<p><strong>&gt;avatar 骨骼命名</strong></p>
+<p>身体： body</p>
+<p>武器： weapon</p>
+<p><strong>&gt; avatar部位命名</strong></p>
+<p>身体： body_职业类型_等级</p>
+<p>武器： weapon_职业类型_等级</p>
+<p>翅膀： wing_职业类型_等级</p>
+<p>例： 战士60级 body_1_6</p>
+<p><strong>&gt;贴图命名</strong></p>
+<p>身体： body_职业类型_等级</p>
+<p>武器： weapon_职业类型_等级</p>
+<p>翅膀： wing_职业类型_等级</p>
+<p>小怪以及NPC：body_1</p>
+<p><strong>&gt;&gt; 角色动作动画命名规则</strong></p>
+<p>三连击： combo1、combo2、combo3</p>
+<p>技能： attack1……attackx（有几个技能就到几）</p>
+<p>待机（站立）：idle</p>
+<p>跑步： run</p>
+<p>受伤： hurt</p>
+<p>死亡： die</p>
+<p>连接符： @</p>
+<p>例：ava_p_1@combo1</p>
+<p><strong>&gt; 完整命名参考</strong></p>
+<p>怪物： ava_m_怪物名@动作类型</p>
+<p>玩家： ava_p_角色类型@动作类型</p>
+<p>npc： ava_n_名字@动作类型</p>
+<p>动作骨骼数量要在设计阶段就确定好最大值，一般在50-60之间</p>
+<p>动作帧数以不高于30fps来制作</p>
+<p>目前有几个骨骼是作为挂点使用，有</p>
+<p>Bone001</p>
+<p>Bone025</p>
+<p>D001</p>
+<p>D002</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://xupk472101381.github.io/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%8A%A8%E4%BD%9C%E8%A7%84%E8%8C%83/" data-id="ckrm02zqu000k6ocw1mmd7gjw" data-title="角色动作规范" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-unity/美术规范/角色制作规范" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/" class="article-date">
+  <time class="dt-published" datetime="2021-07-27T11:39:12.209Z" itemprop="datePublished">2021-07-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Unity/">Unity</a>►<a class="article-category-link" href="/categories/Unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/">美术规范</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/">角色制作规范</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>角色制作规范</p>
+<p><strong>1：基础设置</strong></p>
+<ol>
+<li><p> MAX版本使用MAX2013</p>
+</li>
+<li><p> MAX单位设置为（cetimters）厘米</p>
+</li>
+</ol>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/4f40ddee2d2430980e9fc47b6a242b95.png"></p>
+<p>模型面朝-Y轴，模型以世界原点坐标（0,0,0，）作为轴心（在MAX中前视图看到的是模型的正面）</p>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/9312fa8a4592132b59e1e5e7cb2fc89c.jpeg" alt="C:\\Users\\Administrator\\Desktop\\1
+副本副本.jpg"></p>
+<p><strong>2：模型（规范）</strong></p>
+<p>注意事项：主角模型以及BOSS在需要的地方可以做双面。NPC及其他模型不需要双面</p>
+<p>模型贴图，可以用透贴</p>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/55a58403b4da6b397ddeea93ab76fc96.png" alt="C:\\Users\\Administrator\\Desktop\\2015_11_16_16_26.09.bmp"><br><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/bf82d69ecfa67aa91fe3f7d268c17850.jpeg" alt="C:\\Users\\Administrator\\Desktop\\2015_11_19_10_30.JPG"></p>
+<p><strong>1：面数要求</strong>：</p>
+<ol>
+<li><p> 目前暂定主角+武器总面数3200以内 三角面。</p>
+</li>
+<li><p> 小怪，NPC，宠物面数在800-1500三角面。</p>
+</li>
+<li><p> Boss，面数在3000-4000三角面。</p>
+</li>
+<li><p> 翅膀，面数在600-800 三角面。</p>
+</li>
+<li><p> 坐骑，面数在1500-2000三角面。</p>
+</li>
+</ol>
+<p><strong>2：模型基础</strong>：</p>
+<blockquote>
+<p>  同体型角色由于使用同一公共套骨骼，模型姿势以及大小要根据所给公共骨骼制作。需注意所有模型的关节位置，高度，角度要与公共骨骼保持一致。</p>
+</blockquote>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/d8d19ccf18815b58b84172bb09ba913c.jpeg" alt="C:\\Users\\Administrator\\Desktop\\2015__51.jpg"></p>
+<p>2：模型拆分。</p>
+<p>主角换装拆分部件为： 1身体3头2武器</p>
+<blockquote>
+<p>  根据此切分，一个mesh对应一张贴图</p>
+</blockquote>
+<p>怪物以及NPC模型无拆分，NPC贴图对应一张最大大小为512*512，怪物，boss武器可以单独一张贴图。怪物贴图大小一般是256*256<br>boss大小一般 512*512 翅膀贴图大小为 256*256</p>
+<p>UV尽量横平竖直最大化的利用像素，合理分布UV 不要出现明显的UV拉扯</p>
+<blockquote>
+<p>  <img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/fbaccad10e48d1b151cb2e35fb4da9c2.png" alt="C:\\Users\\Administrator\\Desktop\\2015_11_16_17_04.19.bmp"></p>
+</blockquote>
+<p><strong>3：避免穿插</strong>。制作时注意模型与模型的匹配。<img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/6ed410d0370b1c7c40b05bf5b751c143.jpeg" alt="C:\\Users\\Administrator\\Desktop\\2015_11_16_16_51.00
+副本.bmp"></p>
+<p><strong>4：关节布线：</strong></p>
+<ul>
+<li><p>  对于关节部位布线要求比较严格。关节部位的线不要节约。拿胳膊举例如下图。其他部分以此类推。</p>
+</li>
+<li><p>在制作怪物方面要多参照实际中动物的骨骼和肌肉的结构关系，造型要合理美观</p>
+<p>  修改反馈，遵照动作的骨骼调整模型线条的走向。</p>
+</li>
+</ul>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/ec0de55ac52e531202bb5207e2027b0f.png" alt="D:\\beijing_art\\2014.12.5\\body\\8.bmp"><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/65207a912acb67c8c4058be0736b7188.png"></p>
+<p>另外角色附着在身体上装饰物品等零件，布线走向一致，保持模型布线整洁，里外一致。避免出现交叉线。<img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/b5d18925cf361150c3b9bd6f3bfc9c74.png" alt="C:\\Users\\Administrator\\Desktop\\2015_11_16_17_13.15
+副本.bmp"></p>
+<p><strong>3：贴图部分</strong></p>
+<ol>
+<li><p> 贴图绘制要求</p>
+</li>
+<li><p> 主角: 512*512</p>
+</li>
+<li><p> 武器: 128*128（其中一些复杂高级武器可用256*256）</p>
+</li>
+<li><p> 怪物以及NPC只有1张贴图。怪物大小256*256 NPC大小512*512</p>
+</li>
+<li><p> boss大小一般512*512</p>
+</li>
+<li><p> 翅膀 大小一般256*256</p>
+</li>
+<li><p> 材质球贴图格式为TGA</p>
+</li>
+</ol>
+<p>2角色手绘贴图绘制要求</p>
+<blockquote>
+<p>  1在绘制贴图的时候，可以绘制的写实一些，强调结构塑造与归纳，把材质的层次分开，如金属，皮革和布料等的材质区分。</p>
+</blockquote>
+<blockquote>
+<p>  2不支持透明贴图。</p>
+</blockquote>
+<blockquote>
+<p>  3在绘制身体肤色的时候~~要与脸部肤色保持一致，没有接缝。</p>
+</blockquote>
+<p><strong>4：文件命名</strong></p>
+<p>1：模型文件夹名，max文件名一致，mesh模型名与材质球名贴图名一致</p>
+<p>2：贴图命名规则：</p>
+<p>模型max名字以及文件夹名字：如：10级战士</p>
+<p><strong>5：光滑组要求</strong></p>
+<p>光滑组的调整对模型美术效果提升也起着很大的作用。尽量避免过多黑边的出现。这里NPC全部给光滑组1<br>主角总体给1，转角给2如图</p>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/32f013ff51714945ed3fc1cb8f22c568.png" alt="C:\\Users\\Administrator\\Desktop\\2015_11_19_12_05.49
+副本.bmp"></p>
+<p><strong>6：模型优化：</strong></p>
+<p>1.检查模型点是否焊接，删除废点，废面，</p>
+<p>2.模型坐标轴为世界坐标轴武器摆放如图</p>
+<p>**<img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/5952c10ce1cf0a5781c3f9aff8cc5152.png" alt="C:\\Users\\Administrator\\Desktop\\2015_11_19_12_10.47.bmp"></p>
+<p>**</p>
+<p><strong>使用Reset Xform来检查模型法线是否反转。</strong></p>
+<p>3.看模型是否有开放边，不要出现多于4边面的面。</p>
+<p>4清楚没有用的材质球，隐藏的模型物体。</p>
+<p>5模型命名材质球命名是否正确。</p>
+<p><strong>6</strong>设置所有面ID为1 <img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/441ca750806a6b2fc3f2d91b1eefd622.png" alt="C:\\Users\\Administrator\\Desktop\\2015_11_16_17_41.50
+副本.bmp"></p>
+<p>7按shift+t 打断贴图路径<br><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/934d2b89b88dde4fc97a713188bfc035.jpeg" alt="C:\\Users\\Administrator\\Desktop\\QQ图片20151116174513
+副本副本.jpg"></p>
+<p><strong>7:提交文件</strong></p>
+<p>包含：一张渲染PNG正视图，原画，MAX文件，TGA贴图，PSD文件。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://xupk472101381.github.io/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/" data-id="ckrm02zqw000n6ocw48mb33fl" data-title="角色制作规范" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-unity/开发文档/客户端特效导入流程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%89%B9%E6%95%88%E5%AF%BC%E5%85%A5%E6%B5%81%E7%A8%8B/" class="article-date">
+  <time class="dt-published" datetime="2021-07-27T10:39:36.197Z" itemprop="datePublished">2021-07-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Unity/">Unity</a>►<a class="article-category-link" href="/categories/Unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/">开发文档</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%89%B9%E6%95%88%E5%AF%BC%E5%85%A5%E6%B5%81%E7%A8%8B/">客户端特效导入流程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>特效导入流程</p>
+<p>客户端特效分2种，一种是序列帧特效，一种是粒子特效。</p>
+<ol>
+<li><p>序列帧特效：就是十几张小图命名好，前缀相同，后缀是数字递增，打成图集，</p>
+<p> 然后使用UISpriteAnimation即可。</p>
+<p> <img src="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%89%B9%E6%95%88%E5%AF%BC%E5%85%A5%E6%B5%81%E7%A8%8B/8b89984a764a512650b4945cd5ba49b8.png"></p>
+</li>
+<li><p> 粒子特效：美术使用粒子系统和模型，来做成的特效。</p>
+</li>
+<li><p> 粒子特效有2种比例，一种是场景比例，一种是UI比例</p>
+</li>
+<li><p> 场景比例下制作的，是给场景中使用，例如技能特效，一般是1:1</p>
+</li>
+<li><p> UI比例下制作的，是给UI界面使用，例如特戒特效，一般是1:100多</p>
+</li>
+<li><p>这两种比例不能混用，如果发现比例不对，应该通知美术修改</p>
+<p> 导入流程如下：</p>
+<p> <img src="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%89%B9%E6%95%88%E5%AF%BC%E5%85%A5%E6%B5%81%E7%A8%8B/deecea1adc95bb5ccaba9183316cac2a.png"></p>
+<p> <img src="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%89%B9%E6%95%88%E5%AF%BC%E5%85%A5%E6%B5%81%E7%A8%8B/6f4dedc65e8dfafa6c4c13a3fe5c88e3.png"><br> <img src="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%89%B9%E6%95%88%E5%AF%BC%E5%85%A5%E6%B5%81%E7%A8%8B/699a4873c612714aa1a81d8b6bb4da35.png"><br> <img src="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%89%B9%E6%95%88%E5%AF%BC%E5%85%A5%E6%B5%81%E7%A8%8B/f00f929c60cf2388d013dd7ce5ba6ed1.png"><br> <img src="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%89%B9%E6%95%88%E5%AF%BC%E5%85%A5%E6%B5%81%E7%A8%8B/66b71d81aacf78d346563e33d1f7fc8e.png"></p>
+<p> 导入流程结束，记得PC包也要提交</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://xupk472101381.github.io/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%89%B9%E6%95%88%E5%AF%BC%E5%85%A5%E6%B5%81%E7%A8%8B/" data-id="ckrm02zqq00096ocwclai2gcf" data-title="客户端特效导入流程" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-unity/热更新/客户端热更流程说明" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/07/27/unity/%E7%83%AD%E6%9B%B4%E6%96%B0/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%83%AD%E6%9B%B4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/" class="article-date">
+  <time class="dt-published" datetime="2021-07-27T10:15:00.856Z" itemprop="datePublished">2021-07-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Unity/">Unity</a>►<a class="article-category-link" href="/categories/Unity/%E7%83%AD%E6%9B%B4%E6%96%B0/">热更新</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/07/27/unity/%E7%83%AD%E6%9B%B4%E6%96%B0/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%83%AD%E6%9B%B4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/">客户端热更流程说明</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>题注：热更最核心的，就是依靠svn版本号，两个版本号区间修改的内容，就是热更的内容。同时，热更要格外注意不能影响已经在运营的正式包，所有的修改必须慎重</p>
+<ol>
+<li><p> 每个项目，最重要的两个工程，一个是主干，一个是Alpha0。主干是用于开发，Alpha0是用于出包。热更，就是将主干上开发的功能，同步到Alpha0，然后更新出去。</p>
+</li>
+<li><p>每次版本迭代，都需要新建分支，例如这周开发的功能要更出去，那最后一天就会封版，拉分支，分支的作用是备份，以及策划后续更改配置。在分支建立完成后，客户端有Bug需要修复，依旧在主干修改，然后手动同步到Alpha0。</p>
+<p> 记住：修改代码的事情，肯定是在主干</p>
+</li>
+<li><p>分支创建流程讲解：</p>
+<p> <img src="/2021/07/27/unity/%E7%83%AD%E6%9B%B4%E6%96%B0/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%83%AD%E6%9B%B4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/463c2e33dd950b593556410229a791a9.png"><img src="/2021/07/27/unity/%E7%83%AD%E6%9B%B4%E6%96%B0/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%83%AD%E6%9B%B4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/783bc6dee421c8a3f0bc8ac71ad07bea.png"></p>
+<p> <img src="/2021/07/27/unity/%E7%83%AD%E6%9B%B4%E6%96%B0/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%83%AD%E6%9B%B4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/d748716333044c92a065c5f692d714c3.png"></p>
+<p> 一般检出在Alpha0同目录，方便管理和查看</p>
+</li>
+<li><p>分支创建并检出成功后，将分支上的几个文件夹覆盖到Alpha0上</p>
+<p> \Assets\AssetProject\Editor\AssetBundles\windows</p>
+<p> \Assets\AssetProject\Editor\PrefabBundles</p>
+<p> \Assets\AssetProject\Editor\SourceAsset</p>
+<p> \Assets\AssetProject\OtherResources</p>
+<p> \Assets\AssetProject\Resources</p>
+<p> \Assets\Code</p>
+<p> \Assets\Slua</p>
+<p> 如果是苍穹以及其分支项目，还有这个文件夹<br> \Assets\AssetProject\Editor\EditorCode</p>
+<p> 以上是必须覆盖的文件夹，其它文件夹分情况而定</p>
+<p> 也可以整个Assets文件夹覆盖过去，然后不需要提交的文件夹就还原掉（推荐）</p>
+</li>
+<li><p> 文件夹覆盖完成后，打开Alpha0工程，待Unity编译工程后，将上述文件夹提交svn</p>
+</li>
+<li><p>检查GameData，分安卓和苹果，以下是必须要检查的参数</p>
+<p> <img src="/2021/07/27/unity/%E7%83%AD%E6%9B%B4%E6%96%B0/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%83%AD%E6%9B%B4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/f85d5a81a27223a08be1254d4c0e94dc.png"></p>
+</li>
+<li><p>参数确认无误后，使用工具检索出本次要热更的资源，分别打包对应平台</p>
+<p> <img src="/2021/07/27/unity/%E7%83%AD%E6%9B%B4%E6%96%B0/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%83%AD%E6%9B%B4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/d8cf8ad788836585fb2e0810f858f2e6.png"></p>
+<p> <img src="/2021/07/27/unity/%E7%83%AD%E6%9B%B4%E6%96%B0/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%83%AD%E6%9B%B4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/e646534ea6550d616ca2e4a02f78efa6.png"></p>
+</li>
+<li><p>检索出来的列表，保存在这个文件，先把这个文件提交svn（为了给mac使用）</p>
+<p> <img src="/2021/07/27/unity/%E7%83%AD%E6%9B%B4%E6%96%B0/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%83%AD%E6%9B%B4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/5ae6926b5642eeebc5992ca8498f8033.png"></p>
+</li>
+<li><p>然后执行打包AssetBundle，在安卓和苹果分别执行，打包前会提示当前什么平台，一定要看一下，不然点错就是2个小时的转平台时间</p>
+<p> <img src="/2021/07/27/unity/%E7%83%AD%E6%9B%B4%E6%96%B0/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%83%AD%E6%9B%B4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/1cfc3929d875338aef1a2cbe17d60405.png"></p>
+</li>
+<li><p>打包好的资源提交svn，然后记录下最新的svn版本号，导出资源</p>
+<p> <img src="/2021/07/27/unity/%E7%83%AD%E6%9B%B4%E6%96%B0/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%83%AD%E6%9B%B4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/cf82c88daf47cca314e33cf5cf042edd.png"></p>
+<p> <img src="/2021/07/27/unity/%E7%83%AD%E6%9B%B4%E6%96%B0/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%83%AD%E6%9B%B4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/bc5e39071f262136aff79d2286938a94.png"></p>
+<p> <img src="/2021/07/27/unity/%E7%83%AD%E6%9B%B4%E6%96%B0/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%83%AD%E6%9B%B4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/2a391b37117951985d91c424e06e8799.png"></p>
+</li>
+<li><p>导出好的资源，在工程更目录下，这里要检查下3个平台的文件数量是否一致，以及导出的资源是否是要热更出去的，有没有遗漏或者多出，切记，一定要检查</p>
+<p> <img src="/2021/07/27/unity/%E7%83%AD%E6%9B%B4%E6%96%B0/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%83%AD%E6%9B%B4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/bbf9891e095486e094dd8f80321a22a7.png"></p>
+</li>
+<li><p>检查好了，就打热更压缩包，打出来的压缩包在如下的三个文件夹中</p>
+<p> <img src="/2021/07/27/unity/%E7%83%AD%E6%9B%B4%E6%96%B0/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%83%AD%E6%9B%B4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/04a3a8398cc030179d44f98e6ac0a315.png"></p>
+<p> <img src="/2021/07/27/unity/%E7%83%AD%E6%9B%B4%E6%96%B0/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%83%AD%E6%9B%B4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/443d4a460986dca2ca2a737bdb524b6b.png"></p>
+</li>
+<li><p>压缩包打包，就提交到内网后台，这里要提交三个平台，对应上面三个文件夹</p>
+<p> <img src="/2021/07/27/unity/%E7%83%AD%E6%9B%B4%E6%96%B0/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%83%AD%E6%9B%B4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/42e5d445c9b72caa06d38e59ef0a8b45.png"><br> <img src="/2021/07/27/unity/%E7%83%AD%E6%9B%B4%E6%96%B0/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%83%AD%E6%9B%B4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/9d059069bd91bdb816a3c193a55e675d.png"></p>
+</li>
+<li><p>提交完成后，清除下缓存</p>
+<p> <img src="/2021/07/27/unity/%E7%83%AD%E6%9B%B4%E6%96%B0/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%83%AD%E6%9B%B4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/f95a25cf3148b7053351cbdc89b64ff9.png"></p>
+</li>
+<li><p>这时候一次热更就提交完成了，通知测试验收，测试验收OK后，就需要推送到外网</p>
+<p> <img src="/2021/07/27/unity/%E7%83%AD%E6%9B%B4%E6%96%B0/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%83%AD%E6%9B%B4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/3ab85da9bf7b2515e94062f93e5e8894.png"></p>
+<p> 然后登陆正式后台，再执行一次清除缓存</p>
+<p> 一次版本热更全部完成</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://xupk472101381.github.io/2021/07/27/unity/%E7%83%AD%E6%9B%B4%E6%96%B0/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%83%AD%E6%9B%B4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/" data-id="ckrm02zqr000e6ocw7r28gbda" data-title="客户端热更流程说明" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-unity/开发文档/客户端工程讲解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%B7%A5%E7%A8%8B%E8%AE%B2%E8%A7%A3/" class="article-date">
+  <time class="dt-published" datetime="2021-07-27T10:12:47.467Z" itemprop="datePublished">2021-07-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Unity/">Unity</a>►<a class="article-category-link" href="/categories/Unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/">开发文档</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%B7%A5%E7%A8%8B%E8%AE%B2%E8%A7%A3/">客户端工程讲解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><img src="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%B7%A5%E7%A8%8B%E8%AE%B2%E8%A7%A3/c403c0aba5e1c1e9984d30030bea3f74.png"></p>
+<p>注意点：</p>
+<ol>
+<li><p> 常用UI图集为game开头和public开头。</p>
+</li>
+<li><p> 美术资源文件夹下的图集原图片，一定是一个文件夹一个图集，不可以交叉存放，图集1的小图不能放在图集2的文件夹中。</p>
+</li>
+<li><p> 每一次修改ui界面，都需要重新打包AssetBundle，因为即使在Editor模式下，也是使用AssetBundle资源，可以在选中预制体后，使用快捷键Ctrl+Shift+C</p>
+</li>
+<li><p> Biz文件夹下面，正常规则一个文件夹一个功能</p>
+</li>
+</ol>
+<p><img src="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%B7%A5%E7%A8%8B%E8%AE%B2%E8%A7%A3/87366f21f06f7b191525bb3aef23e736.png"></p>
+<p>以上的图集名称可能会跟随不同的项目而改变</p>
+<p>客户端同步工具讲解</p>
+<p>原因：客户端分为Unity工程和PC包，Unity工程是客户端开发使用，只能客户端人员拥有，PC是给客户端以外的人员运行，所以，需要将我们Unity工程的修改同步到PC包中，同时也需要将PC包中策划修改的配置同步到Unity</p>
+<p>1.同步资源和代码</p>
+<p><img src="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%B7%A5%E7%A8%8B%E8%AE%B2%E8%A7%A3/7a6ca049f868b1642ec363ad2568f4a9.png"></p>
+<p>新下载Unity和PC包后，需要手动执行一次同步，选择PC包根目录，</p>
+<p>注意区分内外网（开发在内网，外网是用于版本验收）</p>
+<p><img src="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%B7%A5%E7%A8%8B%E8%AE%B2%E8%A7%A3/c73e5096ee7e2ca8e9603d85f9ed4c31.png"></p>
+<p>同步过一次后，以后都不需要再手动同步（除非删除了工程或者PC包）</p>
+<p>2.同步配置和协议（注意不要选错路径）</p>
+<p><img src="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%B7%A5%E7%A8%8B%E8%AE%B2%E8%A7%A3/b2fe4bb9a3ded411cfaa789447ded818.png"></p>
+<p><img src="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%B7%A5%E7%A8%8B%E8%AE%B2%E8%A7%A3/51e117694ceba9f899b1394e39db8353.png"><br><img src="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%B7%A5%E7%A8%8B%E8%AE%B2%E8%A7%A3/c47148bd77ce24bc1124a32e4a48f052.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://xupk472101381.github.io/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%B7%A5%E7%A8%8B%E8%AE%B2%E8%A7%A3/" data-id="ckrm02zqs000g6ocw6xw2dly2" data-title="客户端工程讲解" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-unity/开发文档/客户端代码讲解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%A0%81%E8%AE%B2%E8%A7%A3/" class="article-date">
+  <time class="dt-published" datetime="2021-07-27T10:10:45.175Z" itemprop="datePublished">2021-07-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Unity/">Unity</a>►<a class="article-category-link" href="/categories/Unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/">开发文档</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%A0%81%E8%AE%B2%E8%A7%A3/">客户端代码讲解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>main_init：存储所有游戏中需要使用到的lua文件<img src="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%A0%81%E8%AE%B2%E8%A7%A3/6686f081be7b089d48bfdbd19258a4fb.png"></p>
+<p>viewdefine：定义所有UI界面的名称</p>
+<p><img src="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%A0%81%E8%AE%B2%E8%A7%A3/2409cedff73e2c2b6cd6846231d7095a.png"></p>
+<p>Eventdefine:定义所有游戏事件</p>
+<p><img src="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%A0%81%E8%AE%B2%E8%A7%A3/ac3f33781ddfb10d4014a639d8c614b1.png"></p>
+<p>Netdefine：定义所有网络协议（该文件由服务端维护，客户端不能修改）</p>
+<p><img src="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%A0%81%E8%AE%B2%E8%A7%A3/3c98eb806c8622471eabc250dc39a7f8.png"></p>
+<p>Business：定义所有前后端公用的枚举或常量（该文件由前后端共同维护）</p>
+<p><img src="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%A0%81%E8%AE%B2%E8%A7%A3/51eb7b84e94db7465771cdf72ae96e76.png"></p>
+<p>global_biz：定义所有客户端公用枚举或常量，还有工具方法</p>
+<p><img src="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%A0%81%E8%AE%B2%E8%A7%A3/4b4b69af27da370f3ac486a26b954903.png"></p>
+<p>功能开发讲解：</p>
+<p><img src="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%A0%81%E8%AE%B2%E8%A7%A3/568c215bc92aa49f2422c0d883c381c0.png"></p>
+<p><img src="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%A0%81%E8%AE%B2%E8%A7%A3/057391833fb3312364d837da2cd7672c.png"></p>
+<p><img src="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%A0%81%E8%AE%B2%E8%A7%A3/b76318c5b698faf3ba2a6f2fcfcd94a6.png"></p>
+<p><img src="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%A0%81%E8%AE%B2%E8%A7%A3/e1d232e344641c98b64e7bc32186918c.png"></p>
+<p>所有UI界面使用该层级</p>
+<p><img src="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%A0%81%E8%AE%B2%E8%A7%A3/f4d35e2a82c72aa36982317280d1d529.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://xupk472101381.github.io/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%A0%81%E8%AE%B2%E8%A7%A3/" data-id="ckrm02zqq000c6ocwbz9u91l3" data-title="客户端代码讲解" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-unity/出包文档/IOS接入详细流程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/" class="article-date">
+  <time class="dt-published" datetime="2021-07-27T09:48:12.137Z" itemprop="datePublished">2021-07-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Unity/">Unity</a>►<a class="article-category-link" href="/categories/Unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/">出包文档</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/">IOS接入详细流程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>Unity导出Xcode时需要注意：</strong></p>
+<p>当需要导出Xcode工程时</p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/b9eea97e0390d9493263010002825e91.jpeg" alt="IMG_256"></p>
+<ol>
+<li> 小版本号：当游戏热更量较大或者渠道要求无热更的时候需要改动。通常新的版本号问下凯哥（有后台账号去后台查看）方法如下：</li>
+</ol>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/a10155c4010b8d11ca8ed417d473d366.png"></p>
+<ol>
+<li><p> 热更开关：默认打开（无特殊情况）</p>
+</li>
+<li><p> 包类型：IOS_P越狱，IOS_L正版包，一般情况只用到这两种。</p>
+</li>
+<li><p> 平台：固定IOS平台</p>
+</li>
+<li><p> 外网测试包：勾选即为打白包。正式包不勾选。</p>
+</li>
+<li><p>当GameDataSetting文件修改完时，执行Export<br> All（一般是改动什么文件Export什么文件），<strong>正版包</strong>还需要执行<strong>Export<br> GarbageCode</strong>和<strong>Export GarbageAsset</strong>如图所示：</p>
+<p> <img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/61e7a35ae95cc32963d07918f4ad6eed.png" alt="IMG_256"><br> 执行完成后我们就导出Xcode工程到本地</p>
+<p> <img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/578f940b2724fee6acb8beb1a2297221.jpeg" alt="IMG_256"></p>
+</li>
+</ol>
+<p><strong>越狱包：</strong></p>
+<p>越狱包可以用同一个Xcode工程，所以我们可以导出一个Xcode工程共用。出不同的渠道包拷一个去接入即可。</p>
+<p><strong>正版包：</strong></p>
+<p>正版包不可以共用Xcode工程，所以每次出正版包我们需要导出一次Xcode工程，切记<strong>正版包</strong>还需要执行<strong>Export<br>GarbageCode</strong>和<strong>Export GarbageAsset</strong><br>然后才能导出Xcode工程，每一个包单独用一个Xcode工程。</p>
+<p><strong>接入SDK的详细步骤</strong></p>
+<p><strong>一、前期准备</strong></p>
+<p><strong>以下说的3点文件在桌面有备份，可以直接拷贝使用</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/c92fe03f5686f3e495f5c842ea271bd6.png" alt="IMG_256">**<br>1.在Data/Raw新建texture文件，用来存放游戏的素材，素材由渠道提供，运营会发给你。具体如下（注意命名规范）：</p>
+<p>loading logo_denglu logo_icon logo_welcome**</p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/a50527247b3eedb04cc2a4ed9e280429.png" alt="IMG_256"><br><strong>2.IOS文件，注意目录层级（Classes和Resources）Classes是工程的SDK接入的主要代码，Resources文件可以放SDK库文件，也可以放工程的根目录。具体路径如下图IOS/Resources/cl43Lczz/lib，SDK文件也可以放在工程根目录，指定到Unity-iPhone<br>target就可以（不明白的地方可以参考之前的工程）。</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/8fe0332dddde4f7744f5205d0ea9db76.png" alt="IMG_256"></p>
+<ol>
+<li> <strong>替换Unity-IPhone文件，appiconset是icon，icon运营会给，照着命名然后替换即可，launchimage是闪屏文件，渠道没有要求用默认的即可。</strong></li>
+</ol>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/a5c8a90479f2db58636ae3808f1b5dbe.png" alt="IMG_256"></p>
+<ol>
+<li> <strong>Xcode工程配置</strong></li>
+</ol>
+<p><strong>1）打开Unity-IPhone.xproject文件，在Unity-iPhone 这个target修改配置如图。<br>Unity-iPhone =&gt; General</strong></p>
+<p><strong>1.依次是Display Name:游戏名字，Bundle<br>Identifier:游戏bundleID（这个渠道没有提供则自拟，比如com.cqgh.cq，中间cqgh为项目名称字母缩写，cq游戏名字母缩写），Version:游戏版本号（一般1.0.1，提版本号就改为1.0.2），build：参考Version改，1.0.1为1，1.0.2为2）。</strong></p>
+<p><strong>2.证书，越狱包直接用我们的证书（PTAllPackage）,正版包用渠道发来的证书。证书过期找运营重新导。</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/f7977b67777e583ccebfe955bd1e4e12.png"></p>
+<p><strong>3.设备安装游戏需要的最低版本号。一般填小点。9、10即可</strong></p>
+<blockquote>
+<p>  <strong>4.打开游戏转向，这里不需要改动，默认。</strong></p>
+</blockquote>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/efc5575be8686df97fcecda75a9cbf87.png" alt="IMG_256"></p>
+<ol>
+<li><p> <strong>接下来配置icon、闪屏和库文件如图</strong></p>
+</li>
+<li><p> <strong>这里选择我们之前配好的icon和闪屏文件，指定到文件夹即可。</strong></p>
+</li>
+<li><p> <strong>需要手动添加SafariServices.framework、ImageIO.framework、Security.framework、libc++.tbd、libz.tbd这几个库文件，对接SDK的时候看SDK文档有要求就继续加SDK要求的库文件。</strong></p>
+</li>
+</ol>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/f97ae34de260354b5702be48d7748015.png" alt="IMG_256"></p>
+<ol>
+<li><strong>把IOS文件导进工程，并指定到Unity-iPhone这个Target下。有两种方法如图。1是Add<br> ,2是直接拖到Unity-iPhone下。</strong></li>
+</ol>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/657d61d119a25934c4866969cf4e9de7.jpeg" alt="IMG_256"><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/b5daaa729a0c49769e2559ac443d6a91.jpeg" alt="IMG_256"></p>
+<p><strong>加进来之后，按照如图勾选就可以。</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/fc90367c9d12f0b84a75de18890fa4c4.jpeg" alt="IMG_256"></p>
+<p><strong>在unity-iPhone ==&gt; Build Setting ==&gt;Other Linker Flags<br>加入-ObjC，指定Info.plist文件（在之前说的Resources文件下，或者用根目录的）。同时根据SDK文档配置Info.plist文件（苹果的相机，相册，麦克风权限，和SDK第三方的支付需要在此配置，需要注意。不明白的可以参考之前结果的工程）</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/198025604859b3ca9cf3be59e2e3e599.png" alt="IMG_256"></p>
+<p><strong>同时需要配置sdkInfo，market为包号，channel为渠道标识。</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/2df25abba3765921fde66f8d617c58bd.png" alt="IMG_256"></p>
+<p><strong>关闭Bitcode，unity-iPhone ==&gt; Build Setting ==&gt;Enable Bitcode改No</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/c16d40f819a95af5c7da5d1e85b39bf3.png" alt="IMG_256"></p>
+<p>**配置完基础的Xcode的配置后，此时打开SDK客户端接入文档，根据文档完善SDK需要的Xcode配置。</p>
+<p>4）接下里修改各项目的登陆请求地址，每个项目的地址都不一样，具体问PHP要。IOS/Classes/Common/CommonAppDelegate.mm**</p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/768f107c02f4809427cfef3e96b5740e.jpeg" alt="IMG_256"></p>
+<p><strong>三、然后开始接入SDK逻辑，我们需要参考SDK接入文档和SDK<br>Demo同步接入。具体逻辑写在IOS/Classes/NoSDK/AppDelegate.mm文件中，NoSDK是可以改名的（可以改成渠道或者SDK名字）。</strong></p>
+<p><strong>具体需要接入以下几个接口：</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/6e0b01e2a87178bd9e38c41fd0fde033.png" alt="IMG_256"></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/ee5ea8757aaccd76aaae3e14ce99d311.png" alt="IMG_256"></p>
+<ol>
+<li><p> <strong>return 0; 其中0是渠道标识，运营提供</strong></p>
+</li>
+<li><p> <strong>Init(); 固定这么写</strong></p>
+</li>
+<li><p><strong>Login();<br> 游戏的登录逻辑，在这里调用SDK的登录逻辑，将SDK返回的登录成功的数据和PHP通信。（一般写在登录成功回调里，SDK没有登录成功的回调则写在登录方法Login();里），其中</strong>@”package”<br> @”user_id” @”token”<br> @”protocol”<strong>是发给PHP去登录验证的，参数名由PHP定义，不明白的地方可以参考之前的工程。</strong></p>
+<p> <img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/9dd4dbfe2a570a92a762ac1b7fc71265.png" alt="IMG_256"></p>
+</li>
+<li><p><strong>LoginOut();<br> 游戏的登出/注销/切换账号逻辑，在这里调用SDK的登出/注销/切换账号逻辑。如果该SDK没有登出逻辑，则调用</strong>U3DSendMessage(ON_LOGOUT,<br> @””); <strong>通知游戏登出即可。某些SDK有登出回调，就把</strong>U3DSendMessage(ON_LOGOUT,<br> @””); <strong>写在SDK的登录回调中。</strong></p>
+</li>
+<li><p> <strong>ShowCenter(); 预留接口。不用写逻辑。</strong></p>
+</li>
+<li><p><strong>Pay();<br> 支付接口，SDK的支付方法写在这里，然后传相应的参数就行。有些项目有订单类型参数，就在后面定义多一个orderType</strong></p>
+<p> <strong>支付参数释义 ：</strong></p>
+<p> <strong>money购买商品价格 productId产品ID oderType订单类型</strong></p>
+</li>
+</ol>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/4674f105e0decc176e2cd6044eda7d90.png" alt="IMG_256"></p>
+<ol>
+<li><p> <strong>Application(): SDK的初始化可以写在这里</strong></p>
+</li>
+<li><p><strong>UpdatePlayInfo();<br> 更新角色信息接口，创建角色接口。SDK的更新角色接口和创建角色接口写在这里，下图为创建角色时调用。</strong></p>
+<p> <img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/e57fd18ff254ebd2e369b32ac2aa0a16.png" alt="IMG_256"></p>
+</li>
+<li><p><strong>UpdateLevel(); 更新角色等级时调用该接口。</strong></p>
+<p> <strong>游戏内的一些参数如图，这些参数会在登录，支付，上报信息等接口使用，具体调用方法示例：<br> [instance mRoleID];</strong></p>
+<p> <strong>从上往下依次释义</strong></p>
+<p> <strong>mRoleID角色ID mNikeName角色名称 mRoleLvl角色等级</strong></p>
+<p> <strong>mServerID服务器ID mServerName服务器名称 mGold货币余额</strong></p>
+<p> <strong>mVipLvl vip等级 mFactionName公会名称 mCreateRoleTime创角时间</strong></p>
+<p> <strong>mState当前状态 mYapType 支付方式 mDomain 域名（基本不用）</strong></p>
+<p> <img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/7c7b26062b7591dade1e89a6f4bad549.png" alt="IMG_256"></p>
+</li>
+</ol>
+<p><strong>5）逻辑接入完成开始调试，联合PHP调通登录和支付即可。跑一下游戏没问题之后准备打包，直接执行Product==&gt;Archive</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/6fe7cb73ba3ce2539dc654de3ec63833.jpeg" alt="IMG_256"></p>
+<p><strong>四、打包，Archive完成后执行Distribute App</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/07df5094feeac589752ae0bfb5bf1df5.png" alt="IMG_256"></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/ae637c00f3987a143e1df7b598a687da.png" alt="IMG_256"></p>
+<p><strong>越狱包选择Development 然后Next</strong></p>
+<p><strong>正版包选择iOS App Store 然后Next，选择Export其余步骤相同</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/d81b9a33aed727e3e426a8c45bd73d43.png" alt="IMG_256"></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/3f1ff711fa645e8616c8a53e9da12eee.png" alt="IMG_256"></p>
+<p><strong>这里直接Next即可</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/54f5f0c92f6b8db71a6cf1efe84c3719.png"></p>
+<p><strong>这里选择相应的打包证书即可</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/b11094366bb48b0d1fa4786b33f5601e.png" alt="IMG_256"></p>
+<p>**最后Export到本地<br>**可以参考<a target="_blank" rel="noopener" href="http://blog.csdn.net/n5/article/details/50083161">http://blog.csdn.net/n5/article/details/50083161</a></p>
+<p><strong>关于新版本unity（2019.3以上版本）导出的xcode工程</strong></p>
+<p><strong>Unity2019.3以上版本导出的工程略有不同。我们需要将SafariServices.framework、ImageIO.framework、Security.framework、libc++.tbd、libz.tbd和SDK的库文件加到UnityFramework这个Target中，</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/70b16588f0087fdac86b546d12695903.png" alt="IMG_256"></p>
+<p><strong>Info.plist需要配置在主Target<br>Unity-iPhone，同时info.plis文件尽量用unity导出的自带的，需要补齐里面的配置，相机相册麦克风等权限，和包号，渠道标识的配置。</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/e82723fea10ce91f68ce2e7a6903bee8.png" alt="IMG_256"></p>
+<p><strong>闪屏命名成框选的命名</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/d1194cab4076fd4acb4bcbcbabfe8c2e.png" alt="IMG_256"></p>
+<p><strong>在unityFramework==&gt;Build Phases CommonReachability.mm和CommonAppDelegate.mm<br>加上 -fno-objc-arc 属性，如下</strong></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/8b52edad1c66a33910c50a82ba3710d1.png" alt="IMG_256"></p>
+<p><strong>另外打包的时候直接Archive参考</strong></p>
+<p><strong><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sunfuyou/p/6545442.html">https://www.cnblogs.com/sunfuyou/p/6545442.html</a></strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/IOS%E6%8E%A5%E5%85%A5%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B/" data-id="ckrm02zqi00016ocw5l5kdtnp" data-title="IOS接入详细流程" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-unity/出包文档/安卓打包教程（AS）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2021-07-27T02:38:17.512Z" itemprop="datePublished">2021-07-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Unity/">Unity</a>►<a class="article-category-link" href="/categories/Unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/">出包文档</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/">安卓打包教程（AS）</a>
     </h1>
   
 
@@ -94,35 +922,35 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <p>1.配置Unity</p>
-<p><img src="/2021/07/27/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/1c5e0cb809b3569372d5d2eb2ea87586.png"></p>
-<p><img src="/2021/07/27/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/b7638d8e7fb423e366431441ba1b5a7f.png"></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/1c5e0cb809b3569372d5d2eb2ea87586.png"></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/b7638d8e7fb423e366431441ba1b5a7f.png"></p>
 <p>注意：</p>
 <p>1._common和_keystore不需要修改</p>
 <p>2._sdkconfig中的txt，需要打开编辑，修改中间的第2，3，4，其他不需要修改</p>
 <p>4.配置打包参数</p>
-<p><img src="/2021/07/27/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/0fa4bd29328e9607e6052d4b73be56b6.png"></p>
-<p><img src="/2021/07/27/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/952d7a68065f1f0b5411bb2304a93042.png"></p>
-<p><img src="/2021/07/27/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/1d3d72212cb6954fe036f73ba542e7ce.png"></p>
-<p><img src="/2021/07/27/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/db18cfe4ac289cd6ffaa096be53e85d4.png"></p>
-<p><img src="/2021/07/27/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/054eca52ed7bb6bd8da9c93002c7777d.png"></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/0fa4bd29328e9607e6052d4b73be56b6.png"></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/952d7a68065f1f0b5411bb2304a93042.png"></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/1d3d72212cb6954fe036f73ba542e7ce.png"></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/db18cfe4ac289cd6ffaa096be53e85d4.png"></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/054eca52ed7bb6bd8da9c93002c7777d.png"></p>
 <p>注意如何打最新包和获取最新热更版本号</p>
 <ol>
 <li><p> 将项目更新到最新</p>
 </li>
 <li></li>
 </ol>
-<p><img src="/2021/07/27/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/dfc78dd34252cfb86750588d26c6b989.png"></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/dfc78dd34252cfb86750588d26c6b989.png"></p>
 <p>5.导出资源，这一步比较久，等待执行完毕</p>
-<p><img src="/2021/07/27/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/29335e6bbff5a676cf0e94f82fa3ced7.png"></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/29335e6bbff5a676cf0e94f82fa3ced7.png"></p>
 <p>5.导出AS工程</p>
-<p><img src="/2021/07/27/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/40b7f961ff4f655689d720c5fa93ebd6.png"></p>
-<p><img src="/2021/07/27/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/a82d2c93e285f66e160dd1be5581c682.png"></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/40b7f961ff4f655689d720c5fa93ebd6.png"></p>
+<p><img src="/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/a82d2c93e285f66e160dd1be5581c682.png"></p>
 <p>6.然后在AS工程中完成SDK的对接</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xupk472101381.github.io/2021/07/27/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/" data-id="ckrlgf3ha0001oocw8whidq2r" data-title="安卓打包教程（AS）" class="article-share-link">Share</a>
+      <a data-url="http://xupk472101381.github.io/2021/07/27/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/" data-id="ckrm02zqn00066ocw37oza9e4" data-title="安卓打包教程（AS）" class="article-share-link">Share</a>
       
       
       
@@ -134,12 +962,16 @@
 
 
   
-    <article id="post-安卓打包教程（Eclipse）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-unity/出包文档/安卓打包教程（Eclipse）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/" class="article-date">
+    <a href="/2021/07/26/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/" class="article-date">
   <time class="dt-published" datetime="2021-07-26T12:19:31.797Z" itemprop="datePublished">2021-07-26</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Unity/">Unity</a>►<a class="article-category-link" href="/categories/Unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/">出包文档</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -148,7 +980,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/">安卓打包教程（Eclipse）</a>
+      <a class="p-name article-title" href="/2021/07/26/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/">安卓打包教程（Eclipse）</a>
     </h1>
   
 
@@ -157,35 +989,35 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <p>1.在Eclipse中完成SDK的对接，下面是截图QuickSDK的示例工程</p>
-<p><img src="/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/a789d5109eb5c466ef482242a359ffd2.png"></p>
-<p><img src="/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/953116d4bc410629d0049ad87cdc906d.png"></p>
-<p><img src="/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/b97bbd210364178d6a7a3d219e077f74.png"></p>
+<p><img src="/2021/07/26/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/a789d5109eb5c466ef482242a359ffd2.png"></p>
+<p><img src="/2021/07/26/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/953116d4bc410629d0049ad87cdc906d.png"></p>
+<p><img src="/2021/07/26/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/b97bbd210364178d6a7a3d219e077f74.png"></p>
 <p>2.导出jar包</p>
-<p><img src="/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/e2c7c72fc0a58ef82296224a8feeb72b.png"></p>
+<p><img src="/2021/07/26/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/e2c7c72fc0a58ef82296224a8feeb72b.png"></p>
 <p>3.配置Unity</p>
-<p><img src="/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/1c5e0cb809b3569372d5d2eb2ea87586.png"></p>
-<p><img src="/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/27adf8aba494a47b5a917dd331a70db2.png"></p>
+<p><img src="/2021/07/26/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/1c5e0cb809b3569372d5d2eb2ea87586.png"></p>
+<p><img src="/2021/07/26/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/27adf8aba494a47b5a917dd331a70db2.png"></p>
 <p>注意：</p>
 <p>1._common和_keystore不需要修改，但是生成新的证书，要及时提交</p>
 <p>2._sdkconfig中的txt，需要打开编辑，修改中间的第2，3，4，其他不需要修改</p>
 <p>4.配置打包参数</p>
-<p><img src="/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/0fa4bd29328e9607e6052d4b73be56b6.png"></p>
-<p><img src="/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/952d7a68065f1f0b5411bb2304a93042.png"></p>
-<p><img src="/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/1d3d72212cb6954fe036f73ba542e7ce.png"></p>
-<p><img src="/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/db18cfe4ac289cd6ffaa096be53e85d4.png"></p>
-<p><img src="/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/054eca52ed7bb6bd8da9c93002c7777d.png"></p>
+<p><img src="/2021/07/26/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/0fa4bd29328e9607e6052d4b73be56b6.png"></p>
+<p><img src="/2021/07/26/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/952d7a68065f1f0b5411bb2304a93042.png"></p>
+<p><img src="/2021/07/26/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/1d3d72212cb6954fe036f73ba542e7ce.png"></p>
+<p><img src="/2021/07/26/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/db18cfe4ac289cd6ffaa096be53e85d4.png"></p>
+<p><img src="/2021/07/26/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/054eca52ed7bb6bd8da9c93002c7777d.png"></p>
 <p>注意如何打最新包和获取最新热更版本号</p>
 <ol>
 <li><p> 将项目更新到最新</p>
 </li>
 <li></li>
 </ol>
-<p><img src="/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/dfc78dd34252cfb86750588d26c6b989.png"></p>
+<p><img src="/2021/07/26/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/dfc78dd34252cfb86750588d26c6b989.png"></p>
 <p>5.导出资源，这一步比较久，等待执行完毕</p>
-<p><img src="/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/29335e6bbff5a676cf0e94f82fa3ced7.png"></p>
+<p><img src="/2021/07/26/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/29335e6bbff5a676cf0e94f82fa3ced7.png"></p>
 <p>5.打包apk</p>
-<p><img src="/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/b53ae538febe8cc61a8412074e53a814.png"></p>
-<p><img src="/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/9cac47a8cc5229d7121c655e4669e69a.png"></p>
+<p><img src="/2021/07/26/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/b53ae538febe8cc61a8412074e53a814.png"></p>
+<p><img src="/2021/07/26/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/9cac47a8cc5229d7121c655e4669e69a.png"></p>
 <p>注意</p>
 <p>1.如果是新包，期间会提示是否生成证书，点击是，然后证书所有密码都是包号。</p>
 <p>2.Gradle需要使用5.6.4或以上</p>
@@ -193,7 +1025,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xupk472101381.github.io/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/" data-id="ckrlgf3h40000oocwdl0r61qq" data-title="安卓打包教程（Eclipse）" class="article-share-link">Share</a>
+      <a data-url="http://xupk472101381.github.io/2021/07/26/unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/" data-id="ckrm02zqo00076ocw1g9u8l55" data-title="安卓打包教程（Eclipse）" class="article-share-link">Share</a>
       
       
       
@@ -207,11 +1039,23 @@
   
 
 
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
+
 </section>
         
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/">Unity</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/">出包文档</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/">开发文档</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/%E7%83%AD%E6%9B%B4%E6%96%B0/">热更新</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/">美术规范</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Work/">Work</a></li></ul>
+    </div>
+  </div>
+
 
   
     
@@ -223,7 +1067,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
     </div>
   </div>
 
@@ -236,11 +1080,23 @@
       <ul>
         
           <li>
-            <a href="/2021/07/27/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88AS%EF%BC%89/">安卓打包教程（AS）</a>
+            <a href="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/">特效制作规范</a>
           </li>
         
           <li>
-            <a href="/2021/07/26/%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B%EF%BC%88Eclipse%EF%BC%89/">安卓打包教程（Eclipse）</a>
+            <a href="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%8A%A8%E4%BD%9C%E8%A7%84%E8%8C%83/">角色动作规范</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/">角色制作规范</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%89%B9%E6%95%88%E5%AF%BC%E5%85%A5%E6%B5%81%E7%A8%8B/">客户端特效导入流程</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/27/unity/%E7%83%AD%E6%9B%B4%E6%96%B0/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%83%AD%E6%9B%B4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/">客户端热更流程说明</a>
           </li>
         
       </ul>

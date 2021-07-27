@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>特效制作规范 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="U3D新项目特效制作规范 版本规范 现在项目版本Unity 5.6.5f1  **贴图规范 (**不透明用jpg，透明用PNG 或 TGA 图片文件) 图片大小控制为 32x32,64x64,128x128,256x256,512x512等2的幂次方，尺寸越小越好。 所有发射的粒子使用贴图都使用以下类型  命名规范（用英文标注。）  Unity特效目录  注意：目录结构要跟下面的截图一致，否则验收">
+<meta property="og:type" content="article">
+<meta property="og:title" content="特效制作规范">
+<meta property="og:url" content="http://xupk472101381.github.io/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="U3D新项目特效制作规范 版本规范 现在项目版本Unity 5.6.5f1  **贴图规范 (**不透明用jpg，透明用PNG 或 TGA 图片文件) 图片大小控制为 32x32,64x64,128x128,256x256,512x512等2的幂次方，尺寸越小越好。 所有发射的粒子使用贴图都使用以下类型  命名规范（用英文标注。）  Unity特效目录  注意：目录结构要跟下面的截图一致，否则验收">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/67668757bf5bfc6d4263770a982f8c6f.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/9f9c6fb73b6bde1e03f4f455b3c7e370.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/86aa10afdf5f3ce97b929ad7b8afba6a.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/e97e8a4aabcd8e9f73d37d686cbb392f.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/4320d62a67769c49c697827e7e37426f.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/81117ec16ebd938a23bbd033fa87e1d6.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/b9a8f91a1a6d48e27db75677c314f216.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/63d9f90e1e6b003c5966d2e61af55220.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/612a9cdc069dd8f788432bb450d73323.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/94ab841ae6ffe0f1603710fd2d1be01c.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/56b94ebbf5171cefacba67e460a8f671.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/9e990052df9fdf70c02fa093854d8d5b.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/8383b394f8b13a3b32caf969819be5f2.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/c89e636c147c256e620d5be4cc4c31b1.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/20f24363497289f2a1bfc647cb450495.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/0fb4e64b2d1ddbbd83e53e18f10f84a6.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/bec7e71a737c2a5551ae1916f302efc9.png">
+<meta property="og:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/f093ae5742236456a69dc39cb3f8b976.png">
+<meta property="article:published_time" content="2021-07-27T11:47:07.767Z">
+<meta property="article:modified_time" content="2021-07-27T11:49:08.843Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xupk472101381.github.io/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/67668757bf5bfc6d4263770a982f8c6f.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://xupk472101381.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-unity/美术规范/特效制作规范" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/" class="article-date">
+  <time class="dt-published" datetime="2021-07-27T11:47:07.767Z" itemprop="datePublished">2021-07-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Unity/">Unity</a>►<a class="article-category-link" href="/categories/Unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/">美术规范</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      特效制作规范
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>U3D新项目特效制作规范</strong></p>
+<p><strong>版本规范</strong></p>
+<p>现在项目版本Unity 5.6.5f1 <img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/67668757bf5bfc6d4263770a982f8c6f.png"></p>
+<p>**贴图规范 (**不透明用jpg，透明用PNG 或 TGA 图片文件)</p>
+<p>图片大小控制为 32x32,64x64,128x128,256x256,512x512等2的幂次方，尺寸越小越好。</p>
+<p>所有发射的粒子使用贴图都使用以下类型</p>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/9f9c6fb73b6bde1e03f4f455b3c7e370.png"></p>
+<p><strong>命名规范</strong>（用英文标注。）</p>
+<ol>
+<li><p><strong>Unity特效目录</strong></p>
+<p> 注意：目录结构要跟下面的截图一致，否则验收不通过</p>
+</li>
+</ol>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/86aa10afdf5f3ce97b929ad7b8afba6a.png"></p>
+<p>特效使用到的模型网格文件一律存放在</p>
+<p>Assets\ AssetProject\Editor\SourceAsset\effect\efxmesh</p>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/e97e8a4aabcd8e9f73d37d686cbb392f.png"></p>
+<p>特效创建的动作文件保存位置Assets\<br>AssetProject\Editor\SourceAsset\effect\animation</p>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/4320d62a67769c49c697827e7e37426f.png"></p>
+<p>贴图文件保存位置Assets\ AssetProject\Editor\SourceAsset\effect\texture</p>
+<p>注意：特效贴图名称必须以te_开头</p>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/81117ec16ebd938a23bbd033fa87e1d6.png"></p>
+<p>其中贴图类型可以根据功能再设子文件夹分类：如粒子，刀光，序列(sequence)等等</p>
+<blockquote>
+<p>  <img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/b9a8f91a1a6d48e27db75677c314f216.png"></p>
+</blockquote>
+<p>材质球文件保存位置Assets\AssetProject\Editor\SourceAsset\effect\material</p>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/63d9f90e1e6b003c5966d2e61af55220.png"></p>
+<p>特效预设文件保存位置Assets\AssetProject\Editor\PrefabBundles\efx</p>
+<p>注意：所有的特效预设都必须以efx_开头，必须挂载FxControllerData脚本</p>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/612a9cdc069dd8f788432bb450d73323.png"></p>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/94ab841ae6ffe0f1603710fd2d1be01c.png"></p>
+<p>其中预设文件夹需安装特效类型分类，如宠物，道具，技能和翅膀等（分类可以使用英文或者拼音）。</p>
+<blockquote>
+<p>  <img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/56b94ebbf5171cefacba67e460a8f671.png"></p>
+</blockquote>
+<p>所有使用的shader都必须存放的位置Assets\Code\SystemCode\thirdparty\shader</p>
+<blockquote>
+<p>  <img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/9e990052df9fdf70c02fa093854d8d5b.png"></p>
+</blockquote>
+<ol>
+<li> <strong>特效贴图命名没有特殊要求（可安个人偏好）,但是要在贴图命名前加前缀为“te_”：</strong></li>
+</ol>
+<p>贴图必须存放在texture文件夹，文件夹里按子文件夹分类。</p>
+<p><strong>特效Shader规范</strong></p>
+<p>无特殊要求，尽量使用Mobile（如果有开发）-&gt;Particles-&gt;…下面的几个Shader</p>
+<p><strong><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/8383b394f8b13a3b32caf969819be5f2.png"></strong></p>
+<p><strong><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/c89e636c147c256e620d5be4cc4c31b1.png"></strong></p>
+<p><strong>粒子系统规范</strong></p>
+<p><strong>1.坐标清零</strong></p>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/20f24363497289f2a1bfc647cb450495.png"></p>
+<p>粒子系统Renderer下投射、接受阴影选项必须去掉</p>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/0fb4e64b2d1ddbbd83e53e18f10f84a6.png"></p>
+<p>CastShadows，ReceiveShadows投射、接受阴影选项必须关掉，开销特别大</p>
+<p>MaxParticleSize一般为1，正常比例</p>
+<p><strong>2：粒子数量规范</strong></p>
+<p>粒子Max Particles 默认1000，改为30</p>
+<blockquote>
+<p>  <img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/bec7e71a737c2a5551ae1916f302efc9.png"></p>
+</blockquote>
+<p>全部MaxParticles加起来少于30，1000要改为30</p>
+<p><strong>模型规范</strong></p>
+<ol>
+<li> 特效用模型要精简，无特殊要求，面数不要用的太多。</li>
+</ol>
+<p>2导出FBX的时候，一定要检查模型法线有么有统一，有没有反的面。在Options里面把动画（看需求）、摄像机、灯光选项去掉，这些都会极大的增大资源。</p>
+<p><img src="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/f093ae5742236456a69dc39cb3f8b976.png"></p>
+<p>特效使用的fbx模型不使用动画的特效 Animator 要Remove去掉</p>
+<p>不渲染模型的特效 Mesh Renderer要Remove去掉，CastShadows必须去掉</p>
+<p>ReceiveShadows必须去掉Box collider（如无需求）必须remove掉</p>
+<p><strong>注意：</strong></p>
+<p><strong>1：尽量少用粒子系统，每个效果粒子系统尽量控制10个左右。每帧实时总粒子数量不超过60个，发射的数量尽量少。</strong></p>
+<p><strong>2：特效制作父级别prefab及套的prefab都要坐标归零。</strong></p>
+<p><strong>3：工程目录文件和特效贴图不能用中文，可用英文、字母和数字表示。</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://xupk472101381.github.io/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/" data-id="ckrm02zqt000j6ocw8bvu99j6" data-title="特效制作规范" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%8A%A8%E4%BD%9C%E8%A7%84%E8%8C%83/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">角色动作规范</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/">Unity</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/%E5%87%BA%E5%8C%85%E6%96%87%E6%A1%A3/">出包文档</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/">开发文档</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/%E7%83%AD%E6%9B%B4%E6%96%B0/">热更新</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/">美术规范</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Work/">Work</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/">特效制作规范</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%8A%A8%E4%BD%9C%E8%A7%84%E8%8C%83/">角色动作规范</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/27/unity/%E7%BE%8E%E6%9C%AF%E8%A7%84%E8%8C%83/%E8%A7%92%E8%89%B2%E5%88%B6%E4%BD%9C%E8%A7%84%E8%8C%83/">角色制作规范</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/27/unity/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%89%B9%E6%95%88%E5%AF%BC%E5%85%A5%E6%B5%81%E7%A8%8B/">客户端特效导入流程</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/27/unity/%E7%83%AD%E6%9B%B4%E6%96%B0/%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%83%AD%E6%9B%B4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/">客户端热更流程说明</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
